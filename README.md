@@ -9,18 +9,31 @@ Navigation - Navigation is present on all pages, Users should know what page is 
 STRETCH
 Add the ability to add multiple passports, and a homepage to view all of them. Add the ability to add friends so you can compare passports. Add the ability to filter what types of restaurants will appear in a passport. (chain restaurants, non-chain restaurants, mexican, italian, etc.)**
 
+
+
+
+
 Server URL
 https://localhost:4000
 
 EndPoint list:
 
-## Register User
-POST https://
+##Register User
+POST https://https://foodie-passport.herokuapp.com/
 
 **Requirements to register:**
 - unique username
 - email
 - password
+
+#Users Schema
+
+| Fields     	| Data Type        	| Constraints                                         	|
+|------------	|------------------	|-----------------------------------------------------	|
+| id         	| integer:unsigned: |  auto-increments: primary key: created by database: 	|
+| username 	    | string           	| required                                            	|                                           	|
+| email      	| string           	| required: unique:                                    	|
+| password   	| string           	| required                                            	|
 
 **Example sending a request to register a new user**
 
@@ -37,5 +50,13 @@ POST https:
 - password
 
 
+#ENDPOINTS
 
-
+| Methods 	| Endpoints                         | Description                                      	|
+|---------	|----------------------------------	|--------------------------------------------------	|
+| POST    	| /rpp/auth/register               	| registers a new user                             	|
+| POST    	| /rpp/auth/login                  	| logs in a user                                   	|
+| GET     	| /rpp/users                       	| gets all users                                	|
+| GET     	| /rpp/users/id                    	| gets a user by user id                        	|
+| PUT     	| /rpp/users/id                    	| updates/changes a user infomation                 |
+| DELETE  	| rpp/users/id                     	| deletes a user                                   	|
