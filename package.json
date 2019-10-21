@@ -1,0 +1,31 @@
+{
+  "name": "BACKEND",
+  "version": "1.0.0",
+  "description": "**MVP\r This app contains one user type.\r Onboarding process for a new user. Include their name, city for their first passport, and email (can include other info you feel is needed).\r Single Passport view: View lists of restaurants in a city they could go to and stamps/punches of restaurants they have been to. (for MVP just scroll down one long page, as a stretch create a book with pages to click and flip through)\r Single restaurant view page:  Within a city passport, allow a user to click in and view restaurant details, mark that they visited the restaurant (which updates the homepage with a stamp or punch), or delete the restaurant from appearing in their passport.\r (For the purpose of build week, choose a single city to build a passport for)\r Navigation - Navigation is present on all pages, Users should know what page is active by clicking on a nav link and activating their tab.\r STRETCH\r Add the ability to add multiple passports, and a homepage to view all of them. Add the ability to add friends so you can compare passports. Add the ability to filter what types of restaurants will appear in a passport. (chain restaurants, non-chain restaurants, mexican, italian, etc.)**",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "server": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Restaurant-Passport-BW/BACKEND.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Restaurant-Passport-BW/BACKEND/issues"
+  },
+  "homepage": "https://github.com/Restaurant-Passport-BW/BACKEND#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "helmet": "^3.21.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.4"
+  }
+}
