@@ -55,6 +55,6 @@ POST https://https://foodie-passport.herokuapp.com/rrp/auth/login
 | GET     	| /rpp/cities/id                    | gets a cities by city id                        	|
 | GET     	| /rpp/restaurants                  | gets all restaurants                              |
 | GET     	| /rpp/restaurants/id               | gets a restaurant by restaurant id                |
-
+| GET     	| /rpp/restaurants/city/id               | gets a restaurant by city id                 |
 
 

@@ -6,6 +6,7 @@ module.exports = {
   add,
   update, 
   remove,
+  getByCityId
   
 };
 
@@ -15,11 +16,18 @@ function get() {
   return db('restaurants');
 }
 
-function getById(id) {
+function getByCityId(id) {
   return db('restaurants')
     .where({ 'restaurants.city_id': id })
    
 }
+
+function getById(id) {
+  return db('restaurants')
+    .where({ 'restaurants.id': id })
+   
+}
+
 
 function add(city) {
   return db('cities')
