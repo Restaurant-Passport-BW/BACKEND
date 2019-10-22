@@ -1,4 +1,4 @@
-# BACKEND# BACKEND Restaurant Passport
+# BACKEND# BACKEND Restaurant Passport https://https://foodie-passport.herokuapp.com/
 **MVP
 This app contains one user type.
 Onboarding process for a new user. Include their name, city for their first passport, and email (can include other info you feel is needed).
@@ -9,46 +9,38 @@ Navigation - Navigation is present on all pages, Users should know what page is 
 STRETCH
 Add the ability to add multiple passports, and a homepage to view all of them. Add the ability to add friends so you can compare passports. Add the ability to filter what types of restaurants will appear in a passport. (chain restaurants, non-chain restaurants, mexican, italian, etc.)**
 
-
-
-
-
-Server URL
-https://localhost:4000
-
-EndPoint list:
-
 ##Register User
-POST https://https://foodie-passport.herokuapp.com/
+POST https://https://foodie-passport.herokuapp.com/rrp/auth/register
 
 **Requirements to register:**
 - unique username
 - email
 - password
 
-#Users Schema
+##Users Schema
 
 | Fields     	| Data Type        	| Constraints                                         	|
 |------------	|------------------	|-----------------------------------------------------	|
-| id         	| integer:unsigned: |  auto-increments: primary key: created by database: 	|
+| id         	| integer:unsigned: | auto-increments: primary key: created by database: 	|
 | username 	    | string           	| required                                            	|                                           	|
 | email      	| string           	| required: unique:                                    	|
 | password   	| string           	| required                                            	|
 
 **Example sending a request to register a new user**
 
-{   "username" : "Shannon",
+{   
+    "username" : "Shannon",
     "email": " shannon@gmail.com
     "password" : "thisisagoodone"
 }
 
+##LOG USER IN
+POST https://https://foodie-passport.herokuapp.com/rrp/auth/login
 **Returns login token when user logs in**
-POST https:
 
 **Requirements to login:**
 - existing username
 - password
-
 
 #ENDPOINTS
 
@@ -58,5 +50,11 @@ POST https:
 | POST    	| /rpp/auth/login                  	| logs in a user                                   	|
 | GET     	| /rpp/users                       	| gets all users                                	|
 | GET     	| /rpp/users/id                    	| gets a user by user id                        	|
-| PUT     	| /rpp/users/id                    	| updates/changes a user infomation                 |
-| DELETE  	| rpp/users/id                     	| deletes a user                                   	|
+| PUT     	| /rpp/users/id                    	| updates a user infomation                         |
+| GET     	| /rpp/cities                       | gets all cities                                	|
+| GET     	| /rpp/cities/id                    | gets a cities by city id                        	|
+| GET     	| /rpp/restaurants                  | gets all restaurants                              |
+| GET     	| /rpp/restaurants/id               | gets a restaurant by restaurant id                |
+
+
+
