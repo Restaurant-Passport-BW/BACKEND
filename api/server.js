@@ -18,7 +18,7 @@ server.use('/rpp/users', usersRouter);
 server.use('/rpp/cities', citiesRouter);
 server.use('/rpp/restaurants', restaurantsRouter);
 server.get('/', (req, res) => {
-    res.send("This Is The Restaurant Passport Server")
+    res.json({message_from_server:"This Is The Restaurant Passport Server"})
 })
 
 module.exports = server;

@@ -4,6 +4,8 @@ const router = express.Router();
 
 const cities = require('./citiesAccess.js');
 
+
+//Get all cities
 router.get('/', (req, res) => {
     cities.get()
          .then(cities => {
@@ -14,7 +16,7 @@ router.get('/', (req, res) => {
          })
   });
   
-
+//Get City by ID
   router.get('/:id', (req, res) => {
     const {id} = req.params;
 
@@ -32,6 +34,8 @@ router.get('/', (req, res) => {
           });
   });
 
+
+//Add a city
   router.post('/', (req, res) => {
     cities.add(req.body)
          .then(city => {
@@ -42,6 +46,8 @@ router.get('/', (req, res) => {
           });
   });
 
+
+  //Update a city
   router.put('/:id', (req, res) => {
     const cityId = req.params.id;
     const update = req.body;
@@ -73,7 +79,7 @@ router.get('/', (req, res) => {
 });
 
 
-
+//Delete a city
 router.delete('/:id', (req, res) => {
   const cityId = req.params.id;
 
@@ -92,7 +98,7 @@ router.delete('/:id', (req, res) => {
 });
 
 
-
+//Get city by user id
   router.get('/:id', (req, res) => {
     const {id} = req.params;
 

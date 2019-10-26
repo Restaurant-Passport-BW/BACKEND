@@ -1,13 +1,4 @@
 # BACKEND# BACKEND Restaurant Passport https://https://foodie-passport.herokuapp.com/
-**MVP
-This app contains one user type.
-Onboarding process for a new user. Include their name, city for their first passport, and email (can include other info you feel is needed).
-Single Passport view: View lists of restaurants in a city they could go to and stamps/punches of restaurants they have been to. (for MVP just scroll down one long page, as a stretch create a book with pages to click and flip through)
-Single restaurant view page:  Within a city passport, allow a user to click in and view restaurant details, mark that they visited the restaurant (which updates the homepage with a stamp or punch), or delete the restaurant from appearing in their passport.
-(For the purpose of build week, choose a single city to build a passport for)
-Navigation - Navigation is present on all pages, Users should know what page is active by clicking on a nav link and activating their tab.
-STRETCH
-Add the ability to add multiple passports, and a homepage to view all of them. Add the ability to add friends so you can compare passports. Add the ability to filter what types of restaurants will appear in a passport. (chain restaurants, non-chain restaurants, mexican, italian, etc.)**
 
 ##Register User
 POST https://https://foodie-passport.herokuapp.com/rrp/auth/register
@@ -17,7 +8,15 @@ POST https://https://foodie-passport.herokuapp.com/rrp/auth/register
 - email
 - password
 
-##Users Schema
+**Example sending a request to register a new user**
+
+{   
+    "username" : "Shannon",
+    "email": " shannon@gmail.com
+    "password" : "thisisagoodone"
+}
+
+###Users Schema
 
 | Fields     	| Data Type        	| Constraints                                         	|
 |------------	|------------------	|-----------------------------------------------------	|
@@ -26,13 +25,7 @@ POST https://https://foodie-passport.herokuapp.com/rrp/auth/register
 | email      	| string           	| required: unique:                                    	|
 | password   	| string           	| required                                            	|
 
-**Example sending a request to register a new user**
 
-{   
-    "username" : "Shannon",
-    "email": " shannon@gmail.com
-    "password" : "thisisagoodone"
-}
 
 ##LOG USER IN
 POST https://https://foodie-passport.herokuapp.com/rrp/auth/login
@@ -42,19 +35,86 @@ POST https://https://foodie-passport.herokuapp.com/rrp/auth/login
 - existing username
 - password
 
+**Example sending a request to login**
+
+{   
+    "username" : "Shannon",
+    "password" : "thisisagoodone"
+}
+
 #ENDPOINTS
 
 | Methods 	| Endpoints                         | Description                                      	|
 |---------	|----------------------------------	|--------------------------------------------------	|
 | POST    	| /rpp/auth/register               	| registers a new user                             	|
 | POST    	| /rpp/auth/login                  	| logs in a user                                   	|
-| GET     	| /rpp/users                       	| gets all users                                	|
-| GET     	| /rpp/users/id                    	| gets a user by user id                        	|
+| GET     	| /rpp/users                       	| gets all users                                  	|
+| GET     	| /rpp/users/id                    	| gets a user by user id                          	|
 | PUT     	| /rpp/users/id                    	| updates a user infomation                         |
-| GET     	| /rpp/cities                       | gets all cities                                	|
+
+
+
+
+##CITIES
+GET all cities https://https://foodie-passport.herokuapp.com/rrp/cities
+GET cities by id https://https://foodie-passport.herokuapp.com/rrp/cities/5
+
+#ENDPOINTS
+
+| Methods 	| Endpoints                         | Description                                      	|
+|---------	|----------------------------------	|--------------------------------------------------	|
+| GET     	| /rpp/cities                       | gets all cities                                  	|
 | GET     	| /rpp/cities/id                    | gets a cities by city id                        	|
+
+[
+  {
+    "id": 1,
+    "name": "Los Angeles",
+    "state": "California"
+  },
+  {
+    "id": 2,
+    "name": "San Diego",
+    "state": "California"
+  },
+  {
+    "id": 3,
+    "name": "San Jose",
+    "state": "California"
+  }
+]
+
+
+
+##RESTAURANTS
+GET all restaurants https://https://foodie-passport.herokuapp.com/rrp/restaurants
+Returns a array of restaurants
+[
+  {
+    "id": 1,
+    "name": "Searsucker",
+    "address": "2259 SouthMount Blvd La Jolla CA 92037",
+    "phone_number": 555555555,
+    "city_id": 1
+  },
+  {
+    "id": 2,
+    "name": "P.F. Chang's",
+    "address": "2259 SouthMount Blvd La Jolla CA 92037",
+    "phone_number": 555555555,
+    "city_id": 1
+  },
+]
+
+GET restaurants by id https://https://foodie-passport.herokuapp.com/rrp/restaurants/5
+GET restaurants by id https://https://foodie-passport.herokuapp.com/rrp/restaurants/city/5
+
+#ENDPOINTS
+
+| Methods 	| Endpoints                         | Description                                      	|
+|---------	|----------------------------------	|--------------------------------------------------	|
 | GET     	| /rpp/restaurants                  | gets all restaurants                              |
 | GET     	| /rpp/restaurants/id               | gets a restaurant by restaurant id                |
-| GET     	| /rpp/restaurants/city/id               | gets a restaurant by city id                 |
+| GET     	| /rpp/restaurants/city/id          | gets a restaurant by city id                      |
 
 

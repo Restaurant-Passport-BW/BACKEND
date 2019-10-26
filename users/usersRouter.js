@@ -4,6 +4,8 @@ const router = express.Router();
 
 const users = require('./usersAccess.js');
 
+
+//Get All Users
 router.get('/', (req, res) => {
     users.get()
          .then(users => {
@@ -14,7 +16,7 @@ router.get('/', (req, res) => {
          })
   });
   
-
+//Get Users by id
   router.get('/:id', (req, res) => {
     const {id} = req.params;
 
@@ -32,6 +34,8 @@ router.get('/', (req, res) => {
           });
   });
 
+
+  //Update user
   router.put('/:id', (req, res) => {
     const userId = req.params.id;
     const update = req.body;
@@ -63,7 +67,7 @@ router.get('/', (req, res) => {
 });
 
 
-
+//Delete User
 router.delete('/:id', (req, res) => {
   const userId = req.params.id;
 
